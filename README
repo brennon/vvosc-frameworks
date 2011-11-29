@@ -1,0 +1,11 @@
+# Installation
+ - Clone this repository into your ~/Library/SDKs directory:
+   - `mkdir -p ~/Library/SDKs`
+   - `cd ~/Library/SDKs`
+   - `git://github.com/brennon/vvocs-frameworks.git`
+ - Alter your iOS Xcode project as follows:
+   - Double-click your application/target in the left-hand list in your project window (or select it and get its info). Click on the "Build" tab.
+   - Find the "Additional SDKs" option, and add `"$HOME/Library/SDKs/VVOSC/$(PLATFORM_NAME).sdk"`
+   - Still in the "Additional SDKs" option, add `"$HOME/Library/SDKs/VVBasics/$(PLATFORM_NAME).sdk"`
+   - Find the "Other Linker Flags" option, and add `"-ObjC -lVVOSC -lVVBasics"`
+   - That's it- you're done now. You can import/include objects from the VVOSC framework in your source code as you normally would (`#import <VVOSC/VVOSC.h>`).
